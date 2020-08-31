@@ -1,1 +1,2 @@
-print("Hello, World!"*10000)
+#This is a program that says hello world (:
+print("Hello, World!")

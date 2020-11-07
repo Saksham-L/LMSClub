@@ -3,10 +3,10 @@ from flask import Flask
 app=Flask(__name__)
 @app.route('/')
 def index():
-	return '<h1 align=center> Please enter / and then your name in the address bar<h1>'
+	return """<body bgcolor=black><h1 style="text-align:center;color: crimson;" > Please enter / and then your name in the address bar</h1></body>"""
 @app.route('/<name>')
 def name(name):
-	return '<h1> Hello {}</h1><h2> Please go to the calendar page to see your <a href="http://127.0.0.1:5000/calendar">calendar</a><h2>'.format(name)
+	return '<body bgcolor=black><h1 style="text-align:center;color: crimson;"> Hello {}</h1></boday><h2 style="color: crimson;"> Please go to the calendar page to see your <a href="http://127.0.0.1:5000/calendar">calendar</a><h2>'.format(name)
 @app.route('/calendar')
 def calendar():
 	return """
@@ -14,25 +14,35 @@ def calendar():
 <head>
 	<style>
 h1 {
-  color: black;
+  color: crimson;
   font-family: verdana;
   font-size: 300%;
+
 }
 p {
+  background color: crimson;
   color: red;
   font-family: courier;
   font-size: 160%;
 }
 table, th, td {
-  border: 1px solid black;
+  border: 0.5px solid red; border-collapse: collapse;
+  font-weight: bold;
 }
+#t01 {
+  width: 100%;
+  color: crimson;
+   background-color: black;
+
+}
+
 </style>
 </head>
-<body>
+<body bgcolor=black>
 <title>fst html</title>
-<table style="width:100%" id="t01" >
+<table id="t01">
 
-<caption><h1>Calendar</h1></caption>
+<caption><h1 style=background color: black;>Calendar</h1></caption>
   <tr>
     <th>Day</th>
     <th>Time</th>
